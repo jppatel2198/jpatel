@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Jenish Patel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Jenish Patel</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+            <p>Feel free to reach out for opportunities, collaborations, or just to connect</p>
+        </div>
+
+        <div class="glass-grid">
+            <div class="glass-tile">
+                <h3>Contact Information</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>Email:</span>
+                        <a href="mailto:jenish21@outlook.com">jenish21@outlook.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>Phone:</span>
+                        <a href="tel:+4806529356">+1 (480) 652-9356</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>Location:</span>
+                        <span>Boston, Massachusetts</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-tile">
+                <h3>Professional Links</h3>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span>LinkedIn:</span>
+                        <a href="http://www.linkedin.com/in/jenish-patel-a9428a224" target="_blank">linkedin.com/in/jenishpatel</a>
+                    </div>
+                    <div class="contact-item">
+                        <span>GitHub:</span>
+                        <a href="https://github.com/jppatel2198" target="_blank">github.com/jppatel2198</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-tile" style="margin-top: 40px;">
+            <h3>About This Portfolio</h3>
+            <p>This portfolio was built using HTML, CSS, and JavaScript with a focus on modern design principles, glassmorphism effects, and responsive layouts. The color scheme features BMW Isle of Man Green/Yas Marina Blue accents, representing precision, performance, and attention to detail.</p>
+            <p>All projects and information presented here reflect my passion for creating innovative, user-centered solutions with a strong foundation in security and performance optimization.</p>
+        </div>
+
+        <div class="glass-tile" style="margin-top: 30px; text-align: center;">
+            <h3>Let's Connect</h3>
+            <p>I'm currently seeking full-time opportunities in software development, cloud engineering, or cybersecurity. If you're looking for a dedicated professional with a strong technical foundation and a passion for innovation, I'd love to hear from you.</p>
+            <div class="project-links" style="justify-content: center; margin-top: 25px;">
+                <a href="mailto:Jenish21@outlook.com" class="btn">Send Email</a>
+            
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Jenish Patel. All rights reserved.</p>
+    </footer>
+
+    <!-- Performance Mode Toggle -->
+    <!-- Performance Mode Toggle -->
+    <div class="performance-toggle">
+        <button class="toggle-btn light-mode-toggle" onclick="toggleLightMode()">
+            <span class="toggle-indicator">☀</span>
+            <span class="toggle-text">LIGHT MODE</span>
+        </button>
+        <button class="toggle-btn" onclick="togglePerformanceMode()">
+            <span class="toggle-indicator"></span>
+            <span>SPORT MODE</span>
+        </button>
+    </div>
+
+    <script>
+        function toggleLightMode() {
+            document.body.classList.toggle('light-mode');
+            const toggleText = document.querySelector('.light-mode-toggle .toggle-text');
+            const indicator = document.querySelector('.light-mode-toggle .toggle-indicator');
+            if (document.body.classList.contains('light-mode')) {
+                toggleText.textContent = 'DARK MODE';
+                indicator.textContent = '🌙';
+            } else {
+                toggleText.textContent = 'LIGHT MODE';
+                indicator.textContent = '☀';
+            }
+            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        }
+        function togglePerformanceMode() {
+            document.body.classList.toggle('performance-mode');
+            document.querySelectorAll('.toggle-btn')[1].classList.toggle('active');
+        }
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+                document.querySelector('.light-mode-toggle .toggle-text').textContent = 'DARK MODE';
+                document.querySelector('.light-mode-toggle .toggle-indicator').textContent = '🌙';
+            }
+        });
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) { entry.target.classList.add('visible'); } });
+        }, observerOptions);
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.glass-tile, .timeline-item, .section-header, .fade-in, .fade-in-left, .fade-in-right, .scale-in');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

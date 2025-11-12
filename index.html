@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenish Patel - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- BMW Startup Animation -->
+    <div class="startup-overlay">
+        <div class="startup-logo">JP</div>
+        <div class="startup-stripe"></div>
+        <div class="startup-text">READY</div>
+    </div>
+
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Jenish Patel</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="education.html">Education</a></li>
+                <li><a href="experience.html">Experience</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Jenish Patel</h1>
+            <h2>Information Technology Student & Developer</h2>
+            <p>Passionate about building innovative solutions with expertise in full-stack development, cloud computing, and cybersecurity.</p>
+        </section>
+
+        <div class="glass-grid">
+            <div class="glass-tile">
+                <h3>About Me</h3>
+                <p>I'm a B.S. Information Technology student at the University of Massachusetts Boston with a 3.9 GPA, expected to graduate in December 2025. I specialize in creating robust, user-centered applications with a focus on security and performance.</p>
+                <p>My experience spans from mobile app development to cloud-based solutions, with a passion for leveraging emerging technologies to solve real-world problems.</p>
+            </div>
+
+            <div class="glass-tile">
+                <h3>Technical Skills</h3>
+                <div class="tech-tags">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">JavaScript</span>
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">SQL</span>
+                    <span class="tech-tag">FastAPI</span>
+                    <span class="tech-tag">React</span>
+                    <span class="tech-tag">HTML/CSS</span>
+                    <span class="tech-tag">AWS</span>
+                    <span class="tech-tag">GCP</span>
+                    <span class="tech-tag">Docker</span>
+                    <span class="tech-tag">Git</span>
+                </div>
+            </div>
+
+            <div class="glass-tile">
+                <h3>Core Competencies</h3>
+                <ul>
+                    <li>Full-Stack Web Development</li>
+                    <li>Cloud Computing (AWS, Google Cloud)</li>
+                    <li>Database Design & Management</li>
+                    <li>Cybersecurity & Authentication</li>
+                    <li>UI/UX Design</li>
+                    <li>API Development</li>
+                    <li>Agile Methodologies</li>
+                </ul>
+            </div>
+
+            <div class="glass-tile">
+                <h3>What I'm Working On</h3>
+                <p>Currently developing <strong>Attendo</strong>, a comprehensive facial recognition attendance system with advanced anti-spoofing measures, liveness detection, and cloud integration.</p>
+                <p>I'm also exploring cutting-edge technologies in AI/ML and continuing to expand my expertise in cybersecurity.</p>
+            </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 60px;">
+            <h2>Performance Metrics</h2>
+        </div>
+
+        <div class="glass-tile hex-pattern">
+            <div class="stats-dashboard">
+                <div class="gauge-container">
+                    <div class="gauge">
+                        <svg width="150" height="150">
+                            <circle class="gauge-bg" cx="75" cy="75" r="65"/>
+                            <circle class="gauge-fill" cx="75" cy="75" r="65"
+                                    stroke-dasharray="408.4" stroke-dashoffset="40.84"/>
+                        </svg>
+                        <div class="gauge-value">3.9</div>
+                    </div>
+                    <div class="gauge-label">GPA</div>
+                </div>
+
+                <div class="gauge-container">
+                    <div class="gauge">
+                        <svg width="150" height="150">
+                            <circle class="gauge-bg" cx="75" cy="75" r="65"/>
+                            <circle class="gauge-fill" cx="75" cy="75" r="65"
+                                    stroke-dasharray="408.4" stroke-dashoffset="81.68"/>
+                        </svg>
+                        <div class="gauge-value">15+</div>
+                    </div>
+                    <div class="gauge-label">Technologies</div>
+                </div>
+
+                <div class="gauge-container">
+                    <div class="gauge">
+                        <svg width="150" height="150">
+                            <circle class="gauge-bg" cx="75" cy="75" r="65"/>
+                            <circle class="gauge-fill" cx="75" cy="75" r="65"
+                                    stroke-dasharray="408.4" stroke-dashoffset="122.52"/>
+                        </svg>
+                        <div class="gauge-value">10+</div>
+                    </div>
+                    <div class="gauge-label">Projects</div>
+                </div>
+
+                <div class="gauge-container">
+                    <div class="gauge">
+                        <svg width="150" height="150">
+                            <circle class="gauge-bg" cx="75" cy="75" r="65"/>
+                            <circle class="gauge-fill" cx="75" cy="75" r="65"
+                                    stroke-dasharray="408.4" stroke-dashoffset="102.1"/>
+                        </svg>
+                        <div class="gauge-value">2025</div>
+                    </div>
+                    <div class="gauge-label">Graduation</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Performance Mode Toggle -->
+    <div class="performance-toggle">
+        <button class="toggle-btn light-mode-toggle" onclick="toggleLightMode()">
+            <span class="toggle-indicator">☀</span>
+            <span class="toggle-text">LIGHT MODE</span>
+        </button>
+        <button class="toggle-btn" onclick="togglePerformanceMode()">
+            <span class="toggle-indicator"></span>
+            <span>SPORT MODE</span>
+        </button>
+    </div>
+
+    <script>
+        function toggleLightMode() {
+            document.body.classList.toggle('light-mode');
+            const toggleText = document.querySelector('.light-mode-toggle .toggle-text');
+            const indicator = document.querySelector('.light-mode-toggle .toggle-indicator');
+            
+            if (document.body.classList.contains('light-mode')) {
+                toggleText.textContent = 'DARK MODE';
+                indicator.textContent = '🌙';
+            } else {
+                toggleText.textContent = 'LIGHT MODE';
+                indicator.textContent = '☀';
+            }
+            
+            // Save preference
+            localStorage.setItem('theme', document.body.classList.contains('light-mode') ? 'light' : 'dark');
+        }
+
+        function togglePerformanceMode() {
+            document.body.classList.toggle('performance-mode');
+            document.querySelectorAll('.toggle-btn')[1].classList.toggle('active');
+        }
+
+        // Load saved theme preference
+        window.addEventListener('DOMContentLoaded', () => {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme === 'light') {
+                document.body.classList.add('light-mode');
+                document.querySelector('.light-mode-toggle .toggle-text').textContent = 'DARK MODE';
+                document.querySelector('.light-mode-toggle .toggle-indicator').textContent = '🌙';
+            }
+        });
+
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Animate gauge values
+                    if (entry.target.classList.contains('hex-pattern')) {
+                        animateGauges();
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe all elements with animation classes
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('.glass-tile, .timeline-item, .section-header, .fade-in, .fade-in-left, .fade-in-right, .scale-in');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+
+        // Animate gauge counters
+        function animateGauges() {
+            const gauges = [
+                { element: document.querySelectorAll('.gauge-value')[0], target: 3.9, decimals: 1 },
+                { element: document.querySelectorAll('.gauge-value')[1], target: 15, decimals: 0, suffix: '+' },
+                { element: document.querySelectorAll('.gauge-value')[2], target: 10, decimals: 0, suffix: '+' },
+                { element: document.querySelectorAll('.gauge-value')[3], target: 2025, decimals: 0 }
+            ];
+
+            gauges.forEach((gauge, index) => {
+                let current = 0;
+                const increment = gauge.target / 60; // 60 frames for smooth animation
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= gauge.target) {
+                        current = gauge.target;
+                        clearInterval(timer);
+                    }
+                    gauge.element.textContent = current.toFixed(gauge.decimals) + (gauge.suffix || '');
+                }, 16); // ~60fps
+            });
+        }
+    </script>
+
+    <footer>
+        <p>&copy; 2025 Jenish Patel. All rights reserved.</p>
+    </footer>
+</body>
+</html>
