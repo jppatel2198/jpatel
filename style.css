@@ -925,14 +925,14 @@ footer {
     }
     
     /* Dashboard Gauges */
-    .stats-dashboard {
+   .stats-dashboard {
         grid-template-columns: repeat(2, 1fr);
-        gap: 20px;
-        padding: 25px 15px;
+        gap: 15px;
+        padding: 15px;
     }
     
     .gauge-container {
-        padding: 20px 15px;
+        padding: 10px;
     }
     
     .glass-tile.hex-pattern {
@@ -940,21 +940,21 @@ footer {
     }
     
     .gauge {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
     
     .gauge svg {
-        width: 120px;
-        height: 120px;
+        width: 100px;
+        height: 100px;
     }
     
     .gauge-value {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
     }
     
     .gauge-label {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
     
     /* Contact Items */
