@@ -969,7 +969,7 @@ footer {
     }
     
     /* Performance Toggle */
-    .performance-toggle {
+    .theme-toggle {
         bottom: 15px;
         right: 15px;
         gap: 8px;
@@ -1082,7 +1082,7 @@ footer {
     }
     
     /* Performance Toggle - Icons Only */
-    .performance-toggle {
+    .theme-toggle {
         bottom: 10px;
         right: 10px;
     }
@@ -1498,8 +1498,8 @@ html {
     pointer-events: none;
 }
 
-/* Performance Mode Toggle */
-.performance-toggle {
+/* Theme Toggle */
+.theme-toggle {
     position: fixed;
     bottom: 30px;
     right: 30px;
@@ -1562,19 +1562,6 @@ body.light-mode .light-mode-toggle {
     border-color: var(--accent-primary);
 }
 
-body.performance-mode .glass-tile {
-    animation: pulse-glow 2s ease-in-out infinite;
-}
-
-@keyframes pulse-glow {
-    0%, 100% {
-        box-shadow: 0 5px 30px var(--accent-glow);
-    }
-    50% {
-        box-shadow: 0 10px 60px var(--accent-glow);
-    }
-}
-
 /* Selection Color */
 ::selection {
     background: var(--bmw-green);
@@ -1596,4 +1583,67 @@ body.performance-mode .glass-tile {
 
 ::-webkit-scrollbar-thumb:hover {
     background: var(--bmw-green-light);
+}
+
+
+/* ===== Safety net: if JavaScript fails, never leave content hidden ===== */
+html:not(.js) .section-header,
+html:not(.js) .glass-grid > .glass-tile,
+html:not(.js) .timeline-item,
+html:not(.js) .fade-in,
+html:not(.js) .fade-in-left,
+html:not(.js) .fade-in-right,
+html:not(.js) .scale-in {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .section-header, .glass-grid > .glass-tile, .timeline-item,
+    .fade-in, .fade-in-left, .fade-in-right, .scale-in {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease, border-color 0.3s ease;
+    z-index: 1000;
+}
+.back-to-top.visible { opacity: 1; visibility: visible; }
+.back-to-top:hover { border-color: var(--accent-primary); }
+
+/* Section sub-label inside tiles (e.g. company / location line) */
+.glass-tile .meta {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin-top: -6px;
+    margin-bottom: 14px;
+}
+
+/* Balanced 2x2 grid for the home page tiles */
+@media (min-width: 900px) {
+    .glass-grid.two-col {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
