@@ -21,8 +21,13 @@
     <link rel="alternate icon" href="favicon.ico">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <link rel="stylesheet" href="style.css">
+    <!-- Visitor analytics (optional): sign up free at goatcounter.com, pick a code,
+         then replace YOURCODE below and delete the comment markers around the script.
+    <script data-goatcounter="https://YOURCODE.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+    -->
 </head>
 <body>
+    <div class="scroll-progress" aria-hidden="true"></div>
     <nav>
         <div class="nav-container">
             <a href="index.html" class="logo">Jenish Patel</a>
@@ -58,6 +63,25 @@
                     <li>Assessed the financial implications of alternative management decisions</li>
                     <li>Translated the analysis into recommendations on business performance</li>
                 </ul>
+                <details class="case-study">
+                    <summary>Read the case study</summary>
+                    <div class="case-body">
+                        <h5>The challenge</h5>
+                        <p>Management faced several possible decisions, each with different financial consequences. The task was to work out which path would best support business performance, knowing that real-world assumptions rarely hold steady.</p>
+                        <h5>My approach</h5>
+                        <p>I built spreadsheet models of each decision scenario, then ran sensitivity analysis to see how the results changed as key assumptions moved.</p>
+                        <ol class="process-steps">
+                            <li><span>Model</span>Build the scenarios in a spreadsheet</li>
+                            <li><span>Stress-test</span>Shift key assumptions one at a time</li>
+                            <li><span>Compare</span>Weigh each decision's financial impact</li>
+                            <li><span>Recommend</span>Turn the numbers into a decision</li>
+                        </ol>
+                        <h5>The outcome</h5>
+                        <p>A recommendation backed by modeled financial implications, with a clear view of which assumptions mattered most and how robust each option was.</p>
+                        <!-- Add your own work here, e.g. a screenshot of your model or slides:
+                        <img src="images/your-file.png" alt="Describe the image" class="case-image"> -->
+                    </div>
+                </details>
                     <div class="tech-tags">
                         <span class="tech-tag">Microsoft Excel</span>
                         <span class="tech-tag">Financial Modeling</span>
@@ -76,6 +100,33 @@
                     <li>Developed recommendations focused on cost management</li>
                     <li>Prioritized supply continuity and operational resilience</li>
                 </ul>
+                <details class="case-study">
+                    <summary>Read the case study</summary>
+                    <div class="case-body">
+                        <h5>The challenge</h5>
+                        <p>Not every purchase deserves the same strategy. The task was to evaluate purchasing categories, understand supplier risk, and find sourcing approaches that balance cost against reliability.</p>
+                        <h5>My approach</h5>
+                        <p>I applied the Kraljic Matrix, which sorts purchasing categories by profit impact and supply risk, then compared sourcing alternatives for each category.</p>
+                        <div class="kraljic" data-kraljic>
+                            <p class="kraljic-hint">Select a quadrant to see the sourcing strategy it calls for.</p>
+                            <div class="kraljic-wrap">
+                                <span class="kraljic-axis kraljic-y">Profit impact &uarr;</span>
+                                <div class="kraljic-grid" role="group" aria-label="Kraljic Matrix quadrants">
+                                    <button type="button" class="kq" data-info="Low supply risk, high profit impact. Use buying power: consolidate volume, run competitive bids, and negotiate on price.">Leverage</button>
+                                    <button type="button" class="kq" data-info="High supply risk, high profit impact. Build long-term partnerships, collaborate closely, and plan jointly with key suppliers.">Strategic</button>
+                                    <button type="button" class="kq" data-info="Low supply risk, low profit impact. Standardize and simplify purchasing to cut administrative cost and effort.">Non-critical</button>
+                                    <button type="button" class="kq" data-info="High supply risk, low profit impact. Secure continuity: add backup suppliers, hold safety stock, and reduce dependence.">Bottleneck</button>
+                                </div>
+                                <span class="kraljic-axis kraljic-x">Supply risk &rarr;</span>
+                            </div>
+                            <p class="kraljic-info" aria-live="polite">Each purchasing category is placed by how much it affects profit and how risky its supply is.</p>
+                        </div>
+                        <h5>The outcome</h5>
+                        <p>Recommendations focused on cost management, supply continuity, and operational resilience, matching each category to the strategy its position calls for.</p>
+                        <!-- Add your own work here, e.g. a screenshot of your model or slides:
+                        <img src="images/your-file.png" alt="Describe the image" class="case-image"> -->
+                    </div>
+                </details>
                     <div class="tech-tags">
                         <span class="tech-tag">Kraljic Matrix</span>
                         <span class="tech-tag">Strategic Sourcing</span>
@@ -95,6 +146,19 @@
                     <li>Defined marketing objectives grounded in business analysis</li>
                     <li>Developed strategic recommendations through team collaboration</li>
                 </ul>
+                <details class="case-study">
+                    <summary>Read the case study</summary>
+                    <div class="case-body">
+                        <h5>The challenge</h5>
+                        <p>Badge Six needed a clearer marketing direction grounded in who its customers are and where it stands against competitors.</p>
+                        <h5>My approach</h5>
+                        <p>Working as a team, we evaluated customer segmentation, analyzed competitive positioning, and set marketing objectives tied to the business analysis.</p>
+                        <h5>The outcome</h5>
+                        <p>A set of strategic marketing recommendations supported by segment and competitor analysis, developed and presented collaboratively.</p>
+                        <!-- Add your own work here, e.g. a screenshot of your model or slides:
+                        <img src="images/your-file.png" alt="Describe the image" class="case-image"> -->
+                    </div>
+                </details>
                     <div class="tech-tags">
                         <span class="tech-tag">Market Analysis</span>
                         <span class="tech-tag">Segmentation</span>
@@ -130,6 +194,9 @@
                         <span class="tech-tag">OpenCV</span>
                         <span class="tech-tag">JWT</span>
                     </div>
+                <div class="project-links">
+                    <a href="https://github.com/jppatel2198" target="_blank" rel="noopener noreferrer" class="btn btn-small">View on GitHub</a>
+                </div>
             </div>
 
             <div class="glass-tile">
@@ -149,6 +216,9 @@
                         <span class="tech-tag">PostgreSQL</span>
                         <span class="tech-tag">Tailwind CSS</span>
                     </div>
+                <div class="project-links">
+                    <a href="https://github.com/jppatel2198" target="_blank" rel="noopener noreferrer" class="btn btn-small">View on GitHub</a>
+                </div>
             </div>
 
             <div class="glass-tile">
@@ -168,6 +238,9 @@
                         <span class="tech-tag">AWS Bedrock</span>
                         <span class="tech-tag">Python</span>
                     </div>
+                <div class="project-links">
+                    <a href="https://github.com/jppatel2198" target="_blank" rel="noopener noreferrer" class="btn btn-small">View on GitHub</a>
+                </div>
             </div>
 
             <div class="glass-tile">
@@ -205,6 +278,9 @@
                         <span class="tech-tag">Data Warehousing</span>
                         <span class="tech-tag">OLAP</span>
                     </div>
+                <div class="project-links">
+                    <a href="https://github.com/jppatel2198" target="_blank" rel="noopener noreferrer" class="btn btn-small">View on GitHub</a>
+                </div>
             </div>
 
             <div class="glass-tile">
@@ -251,7 +327,7 @@
     <!-- Theme Toggle -->
     <div class="theme-toggle">
         <div class="accent-picker" role="group" aria-label="Color theme">
-            <button class="accent-swatch" data-accent="green" style="--swatch: #2a6b50;" aria-label="Isle of Man Green" title="Isle of Man Green" aria-pressed="false"></button>
+            <button class="accent-swatch" data-accent="green" style="--swatch: #3f9470;" aria-label="Isle of Man Green" title="Isle of Man Green" aria-pressed="false"></button>
             <button class="accent-swatch" data-accent="blue" style="--swatch: #4a8bc2;" aria-label="Yas Marina Blue" title="Yas Marina Blue" aria-pressed="false"></button>
             <button class="accent-swatch" data-accent="red" style="--swatch: #d4343b;" aria-label="Toronto Red" title="Toronto Red" aria-pressed="false"></button>
             <button class="accent-swatch" data-accent="purple" style="--swatch: #8a5cc0;" aria-label="Tanzanite Purple" title="Tanzanite Purple" aria-pressed="false"></button>

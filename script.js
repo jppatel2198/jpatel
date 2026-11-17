@@ -110,6 +110,36 @@
         revealAll();
     }
 
+    // ---------- Scroll progress bar ----------
+    const progress = document.querySelector('.scroll-progress');
+    if (progress) {
+        let ticking = false;
+        const updateProgress = function () {
+            const max = document.documentElement.scrollHeight - window.innerHeight;
+            const ratio = max > 0 ? Math.min(window.pageYOffset / max, 1) : 0;
+            progress.style.transform = 'scaleX(' + ratio + ')';
+            ticking = false;
+        };
+        window.addEventListener('scroll', function () {
+            if (!ticking) { window.requestAnimationFrame(updateProgress); ticking = true; }
+        }, { passive: true });
+        window.addEventListener('resize', updateProgress);
+        updateProgress();
+    }
+
+    // ---------- Kraljic Matrix (projects page) ----------
+    document.querySelectorAll('[data-kraljic]').forEach(function (matrix) {
+        const info = matrix.querySelector('.kraljic-info');
+        const buttons = matrix.querySelectorAll('.kq');
+        buttons.forEach(function (btn) {
+            btn.setAttribute('aria-pressed', 'false');
+            btn.addEventListener('click', function () {
+                buttons.forEach(function (b) { b.setAttribute('aria-pressed', b === btn ? 'true' : 'false'); });
+                info.innerHTML = '<strong>' + btn.textContent + ':</strong> ' + btn.dataset.info;
+            });
+        });
+    });
+
     // ---------- Footer year ----------
     document.querySelectorAll('.current-year').forEach(function (el) {
         el.textContent = new Date().getFullYear();
