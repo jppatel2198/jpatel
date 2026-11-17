@@ -20,6 +20,28 @@
         try { localStorage.setItem('theme', next); } catch (e) { /* ignore */ }
     };
 
+    // ---------- Accent color theme ----------
+    const ACCENTS = ['green', 'blue', 'red', 'purple', 'yellow'];
+
+    function applyAccent(accent) {
+        if (ACCENTS.indexOf(accent) === -1) accent = 'green';
+        document.body.dataset.accent = accent;
+        document.querySelectorAll('.accent-swatch').forEach(function (btn) {
+            btn.setAttribute('aria-pressed', btn.dataset.accent === accent ? 'true' : 'false');
+        });
+    }
+
+    let savedAccent = null;
+    try { savedAccent = localStorage.getItem('accent'); } catch (e) { /* storage blocked */ }
+    applyAccent(savedAccent);
+
+    document.querySelectorAll('.accent-swatch').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            applyAccent(btn.dataset.accent);
+            try { localStorage.setItem('accent', btn.dataset.accent); } catch (e) { /* ignore */ }
+        });
+    });
+
     // ---------- Mobile menu ----------
     window.toggleMobileMenu = function () {
         document.querySelector('.nav-links').classList.toggle('active');

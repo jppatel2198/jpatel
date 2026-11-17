@@ -12,7 +12,7 @@
     /* Dark Mode - Isle of Man Green */
     --bmw-green: #1e4d3b;
     --bmw-green-light: #2a6b50;
-    --bmw-green-glow: rgba(30, 77, 59, 0.5);
+    --bmw-green-glow: rgba(var(--accent-rgb), 0.5);
     --bmw-blue: #1c69d4;
     --bmw-purple: #8b2f8b;
     --bmw-red: #e31e24;
@@ -21,30 +21,29 @@
     --text-primary: #ffffff;
     --text-secondary: #b0b0b0;
     --bg-primary: #000000;
-    --bg-gradient: rgba(30, 77, 59, 0.3);
+    --bg-gradient: rgba(var(--accent-rgb), 0.3);
     
     /* Active accent color (switches based on mode) */
-    --accent-primary: var(--bmw-green);
-    --accent-light: var(--bmw-green-light);
-    --accent-glow: var(--bmw-green-glow);
+    --accent-rgb: 30, 77, 59;
+    --accent-primary: #1e4d3b;
+    --accent-light: #2a6b50;
+    --accent-glow: rgba(var(--accent-rgb), 0.5);
 }
 
 /* Light Mode - Yas Marina Blue */
 body.light-mode {
     --yas-marina-blue: #2D5F8D;
     --yas-marina-light: #4A8BC2;
-    --yas-marina-glow: rgba(45, 95, 141, 0.4);
-    --glass-bg: rgba(45, 95, 141, 0.08);
-    --glass-border: rgba(45, 95, 141, 0.2);
+    --yas-marina-glow: rgba(var(--accent-rgb), 0.4);
+    --glass-bg: rgba(var(--accent-rgb), 0.08);
+    --glass-border: rgba(var(--accent-rgb), 0.2);
     --text-primary: #1a1a1a;
     --text-secondary: #4a4a4a;
     --bg-primary: #f5f5f7;
-    --bg-gradient: rgba(45, 95, 141, 0.15);
+    --bg-gradient: rgba(var(--accent-rgb), 0.15);
     
     /* Switch accent colors to blue */
-    --accent-primary: var(--yas-marina-blue);
-    --accent-light: var(--yas-marina-light);
-    --accent-glow: var(--yas-marina-glow);
+
 }
 
 body {
@@ -64,8 +63,8 @@ body {
 
 /* Improve tap highlighting */
 a, button {
-    -webkit-tap-highlight-color: rgba(45, 95, 141, 0.3);
-    tap-highlight-color: rgba(45, 95, 141, 0.3);
+    -webkit-tap-highlight-color: rgba(var(--accent-rgb), 0.3);
+    tap-highlight-color: rgba(var(--accent-rgb), 0.3);
 }
 
 @keyframes pageLoad {
@@ -341,7 +340,7 @@ body.light-mode nav {
 }
 
 body.light-mode .glass-tile:hover {
-    background: rgba(45, 95, 141, 0.12);
+    background: rgba(var(--accent-rgb), 0.12);
 }
 
 .glass-tile:hover::before {
@@ -366,7 +365,7 @@ body.light-mode .glass-tile:hover {
 }
 
 body.light-mode .project-image {
-    background: rgba(45, 95, 141, 0.05);
+    background: rgba(var(--accent-rgb), 0.05);
 }
 
 .project-image img {
@@ -408,7 +407,7 @@ body.light-mode .project-image {
     content: '▹';
     position: absolute;
     left: 0;
-    color: var(--bmw-green);
+    color: var(--accent-primary);
     font-weight: bold;
 }
 
@@ -421,7 +420,7 @@ body.light-mode .project-image {
 }
 
 .tech-tag {
-    background: rgba(30, 77, 59, 0.2);
+    background: rgba(var(--accent-rgb), 0.2);
     border: 1px solid var(--accent-primary);
     padding: 6px 14px;
     border-radius: 20px;
@@ -434,7 +433,7 @@ body.light-mode .project-image {
 }
 
 body.light-mode .tech-tag {
-    background: rgba(45, 95, 141, 0.12);
+    background: rgba(var(--accent-rgb), 0.12);
 }
 
 .tech-tag::before {
@@ -445,13 +444,13 @@ body.light-mode .tech-tag {
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: rgba(30, 77, 59, 0.4);
+    background: rgba(var(--accent-rgb), 0.4);
     transform: translate(-50%, -50%);
     transition: width 0.5s ease, height 0.5s ease;
 }
 
 body.light-mode .tech-tag::before {
-    background: rgba(45, 95, 141, 0.3);
+    background: rgba(var(--accent-rgb), 0.3);
 }
 
 .tech-tag:hover::before {
@@ -460,14 +459,14 @@ body.light-mode .tech-tag::before {
 }
 
 .tech-tag:hover {
-    background: rgba(30, 77, 59, 0.4);
+    background: rgba(var(--accent-rgb), 0.4);
     transform: scale(1.1);
     box-shadow: 0 5px 15px var(--accent-glow);
     border-color: var(--accent-light);
 }
 
 body.light-mode .tech-tag:hover {
-    background: rgba(45, 95, 141, 0.25);
+    background: rgba(var(--accent-rgb), 0.25);
 }
 
 /* Project Links */
@@ -585,7 +584,7 @@ body.light-mode .btn:hover {
 }
 
 body.light-mode .contact-item:hover {
-    background: rgba(45, 95, 141, 0.1);
+    background: rgba(var(--accent-rgb), 0.1);
 }
 
 .contact-item span {
@@ -1360,7 +1359,7 @@ html {
 }
 
 .startup-text {
-    color: var(--bmw-green-light);
+    color: var(--accent-light);
     font-size: 1.2rem;
     letter-spacing: 3px;
     opacity: 0;
@@ -1492,7 +1491,7 @@ html {
     width: 200%;
     height: 200%;
     background-image: 
-        radial-gradient(circle at 50% 50%, rgba(30, 77, 59, 0.05) 1px, transparent 1px);
+        radial-gradient(circle at 50% 50%, rgba(var(--accent-rgb), 0.05) 1px, transparent 1px);
     background-size: 30px 30px;
     opacity: 0.5;
     pointer-events: none;
@@ -1564,7 +1563,7 @@ body.light-mode .light-mode-toggle {
 
 /* Selection Color */
 ::selection {
-    background: var(--bmw-green);
+    background: var(--accent-primary);
     color: var(--text-primary);
 }
 
@@ -1577,12 +1576,12 @@ body.light-mode .light-mode-toggle {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--bmw-green);
+    background: var(--accent-primary);
     border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: var(--bmw-green-light);
+    background: var(--accent-light);
 }
 
 
@@ -1645,5 +1644,92 @@ html:not(.js) .scale-in {
 @media (min-width: 900px) {
     .glass-grid.two-col {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===================================================
+   Accent Color Themes
+   Base values are set per theme; derived values (glow,
+   background wash) are computed on <body> so they follow
+   whichever theme is active.
+   =================================================== */
+body {
+    --accent-glow: rgba(var(--accent-rgb), 0.5);
+    --bg-gradient: rgba(var(--accent-rgb), 0.3);
+}
+body.light-mode {
+    --accent-glow: rgba(var(--accent-rgb), 0.35);
+    --bg-gradient: rgba(var(--accent-rgb), 0.15);
+}
+
+/* Dark mode shades */
+body[data-accent="green"]  { --accent-rgb: 30, 77, 59;   --accent-primary: #1e4d3b; --accent-light: #2a6b50; }
+body[data-accent="blue"]   { --accent-rgb: 45, 95, 141;  --accent-primary: #2d5f8d; --accent-light: #4a8bc2; }
+body[data-accent="red"]    { --accent-rgb: 142, 27, 32;  --accent-primary: #8e1b20; --accent-light: #d4343b; }
+body[data-accent="purple"] { --accent-rgb: 75, 42, 107;  --accent-primary: #4b2a6b; --accent-light: #8a5cc0; }
+body[data-accent="yellow"] { --accent-rgb: 122, 90, 0;   --accent-primary: #7a5a00; --accent-light: #d9a520; }
+
+/* Light mode shades: deeper so text stays readable on the pale background */
+body.light-mode[data-accent="green"]  { --accent-rgb: 30, 92, 68;   --accent-primary: #1e5c44; --accent-light: #237a58; }
+body.light-mode[data-accent="blue"]   { --accent-rgb: 45, 95, 141;  --accent-primary: #2d5f8d; --accent-light: #3a78b0; }
+body.light-mode[data-accent="red"]    { --accent-rgb: 163, 22, 28;  --accent-primary: #a3161c; --accent-light: #c8262d; }
+body.light-mode[data-accent="purple"] { --accent-rgb: 90, 50, 133;  --accent-primary: #5a3285; --accent-light: #7a4fb0; }
+body.light-mode[data-accent="yellow"] { --accent-rgb: 138, 100, 0;  --accent-primary: #8a6400; --accent-light: #a87a00; }
+
+/* Swatch picker, stacked above the Light Mode button */
+.accent-picker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 18px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 25px;
+}
+
+.accent-swatch {
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background: var(--swatch);
+    background-clip: padding-box;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.accent-swatch:hover {
+    transform: scale(1.15);
+}
+
+.accent-swatch[aria-pressed="true"] {
+    box-shadow: 0 0 0 2px var(--bg-primary), 0 0 0 4px var(--text-primary);
+}
+
+.accent-swatch:focus-visible {
+    outline: 2px solid var(--text-primary);
+    outline-offset: 3px;
+}
+
+@media (max-width: 768px) {
+    .accent-picker {
+        padding: 10px 12px;
+        gap: 8px;
+    }
+    .accent-swatch {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    /* Bigger tap targets without making the dots look bigger */
+    .accent-swatch {
+        width: 24px;
+        height: 24px;
     }
 }
